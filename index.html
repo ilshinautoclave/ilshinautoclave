@@ -117,6 +117,12 @@
             position: relative;
         }
 
+        /* 텍스트 영역이 이미지보다 앞으로 오도록 수정된 부분 */
+        .hero-content {
+            position: relative;
+            z-index: 2; /* 장비 이미지(1)보다 높은 층에 배치 */
+        }
+
         .hero-title-brand {
             font-size: 4rem;
             font-weight: 800;
@@ -132,6 +138,8 @@
             font-weight: 700;
             line-height: 1.2;
             margin-bottom: 25px;
+            /* 장비 이미지 위에서도 글씨가 뚜렷하게 보이도록 그림자 추가 */
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
         }
 
         .hero p {
@@ -139,6 +147,8 @@
             color: var(--text-sub);
             max-width: 650px;
             margin-bottom: 45px;
+            /* 본문 텍스트에도 가독성을 위해 그림자 추가 */
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
         }
 
         /* 버튼 영역 */
@@ -174,7 +184,7 @@
             transform: translateY(-40%);
             width: 750px;
             opacity: 0.9;
-            z-index: 1;
+            z-index: 1; /* 텍스트(2)보다 낮은 층에 배치 */
             pointer-events: none;
         }
 
@@ -356,14 +366,16 @@
 
     <main class="container">
         <section class="hero">
-            <div class="hero-title-brand">Ilshin Autoclave</div>
-            <h1>ISOSTATIC PRESS 기술자료</h1>
-            <p>초고압 기술과 정밀한 제어 시스템을 바탕으로 구축된 등방압 가압장치 솔루션입니다. 일신만의 독보적인 기술력으로 최상의 공정 환경을 제공합니다.</p>
-            
-            <div class="hero-buttons">
-                <a href="#" class="btn btn-primary">매뉴얼</a>
-                <a href="#" class="btn btn-secondary">다운로드</a>
-                <a href="#" class="btn btn-secondary">소개 영상 <i class="fa-regular fa-clone"></i></a>
+            <div class="hero-content">
+                <div class="hero-title-brand">Ilshin Autoclave</div>
+                <h1>ISOSTATIC PRESS 기술자료</h1>
+                <p>초고압 기술과 정밀한 제어 시스템을 바탕으로 구축된 등방압 가압장치 솔루션입니다. 일신만의 독보적인 기술력으로 최상의 공정 환경을 제공합니다.</p>
+                
+                <div class="hero-buttons">
+                    <a href="#" class="btn btn-primary">매뉴얼</a>
+                    <a href="#" class="btn btn-secondary">다운로드</a>
+                    <a href="#" class="btn btn-secondary">소개 영상 <i class="fa-regular fa-clone"></i></a>
+                </div>
             </div>
 
             <img src="CIP.png" alt="ISOSTATIC PRESS" class="hero-device-img">
