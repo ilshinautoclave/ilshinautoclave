@@ -9,10 +9,10 @@
     <style>
         /* 기본 스타일 설정 */
         :root {
-            --primary-blue: #2a439c; /* 요청하신 포인트 컬러 */
-            --accent-blue: #4facfe;   /* 그라데이션용 보조 컬러 */
-            --bg-color: #111113;      /* 다크 배경색 */
-            --card-bg: #1e1e21;       /* 카드 배경색 */
+            --primary-blue: #2a439c;
+            --accent-blue: #4facfe;
+            --bg-color: #111113;
+            --card-bg: #1e1e21;
             --text-main: #ffffff;
             --text-sub: #a0a0a5;
         }
@@ -126,7 +126,6 @@
             position: relative;
         }
 
-        /* 요청사항: 로고 부분 그라데이션 적용 */
         .hero-title-brand {
             font-size: 4rem;
             font-weight: 800;
@@ -173,7 +172,7 @@
 
         .btn:hover { transform: translateY(-2px); opacity: 0.9; }
 
-        .btn-primary { background-color: #e63946; color: white; } /* 강조용 레드 */
+        .btn-primary { background-color: #e63946; color: white; }
         .btn-secondary { background-color: #2d2d32; color: white; }
 
         /* 배경 이미지 (장비) */
@@ -274,10 +273,67 @@
             font-weight: 800;
         }
 
-        /* 반응형 */
-        @media (max-width: 1100px) {
-            .hero-device-img { width: 500px; right: 0; }
+        /* =========================================
+           반응형 웹 (Media Queries)
+           ========================================= */
+        
+        /* 태블릿 / 작은 데스크탑 */
+        @media (max-width: 1024px) {
+            .hero-device-img { width: 450px; right: -20px; opacity: 0.5; }
+            .hero-title-brand { font-size: 3rem; }
+            .hero h1 { font-size: 2.5rem; }
             .features { grid-template-columns: repeat(2, 1fr); }
+            .search-box { width: 200px; }
+            nav ul { gap: 15px; }
+        }
+
+        /* 모바일 / 태블릿 세로 */
+        @media (max-width: 768px) {
+            .container { padding: 0 20px; }
+            
+            header { 
+                flex-direction: column; 
+                gap: 15px; 
+                padding: 15px 20px; 
+            }
+            .header-left { 
+                width: 100%; 
+                justify-content: space-between; 
+            }
+            .search-box { display: none; } /* 모바일에서는 검색창 숨김 */
+            
+            nav ul { 
+                flex-wrap: wrap; 
+                justify-content: center; 
+                gap: 10px; 
+            }
+            .header-right { margin-top: 10px; }
+
+            .hero { padding: 60px 0 40px; text-align: center; }
+            .hero-device-img { display: none; } /* 모바일 가독성을 위해 장비 이미지 숨김 */
+            
+            .hero-title-brand { font-size: 2.2rem; }
+            .hero h1 { font-size: 1.8rem; margin-bottom: 15px; }
+            .hero p { font-size: 1rem; margin: 0 auto 30px; }
+            
+            .hero-buttons { 
+                flex-direction: column; 
+                width: 100%; 
+                max-width: 300px; 
+                margin: 0 auto; 
+                gap: 10px; 
+            }
+            .btn { justify-content: center; }
+
+            .features { grid-template-columns: 1fr; margin-top: 40px; padding-bottom: 40px; }
+            
+            .family-sites { padding: 40px 20px; }
+            .site-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+        }
+
+        /* 작은 모바일 화면 */
+        @media (max-width: 480px) {
+            .site-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
