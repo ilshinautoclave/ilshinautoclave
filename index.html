@@ -39,7 +39,7 @@
         /* 상단 헤더 영역 */
         header {
             display: flex;
-            justify-content: space-between;
+            justify-content: center; /* 메뉴 가운데 정렬 */
             align-items: center;
             padding: 20px 40px;
             background-color: rgba(17, 17, 19, 0.95);
@@ -50,6 +50,8 @@
         }
 
         .header-left {
+            position: absolute; /* 메뉴가 정확히 가운데 오도록 로고를 좌측에 절대 위치로 고정 */
+            left: 40px;
             display: flex;
             align-items: center;
             gap: 25px;
@@ -58,19 +60,13 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-weight: 800;
-            font-size: 1.3rem;
             text-decoration: none;
-            color: white;
         }
 
-        .logo-mark {
-            background-color: var(--primary-blue);
-            color: white;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 0.9rem;
+        /* 변경된 로고 이미지 스타일 */
+        .logo img {
+            height: 28px; /* 로고 이미지 높이 (필요시 수치 조절) */
+            width: auto;
         }
 
         .search-box {
@@ -174,16 +170,16 @@
         .btn-primary { background-color: #e63946; color: white; }
         .btn-secondary { background-color: #2d2d32; color: white; }
 
-        /* 배경 이미지 (장비) - 크기 및 위치 수정 완료 */
+        /* 배경 이미지 (장비) */
         .hero-device-img {
             position: absolute;
             right: 0;
             top: 50%;
-            transform: translateY(-50%); /* 세로 기준 완벽한 중앙 정렬 */
-            max-width: 500px; /* 기존 750px에서 대폭 축소하여 넘치지 않게 조절 */
-            height: auto; /* 비율 자동 맞춤 */
-            opacity: 0.8; /* 글자가 더 잘 보이도록 살짝 더 투명하게 */
-            z-index: 1; /* 글자보다 뒤에 배치 */
+            transform: translateY(-50%);
+            max-width: 500px; 
+            height: auto; 
+            opacity: 0.8; 
+            z-index: 1; 
             pointer-events: none;
         }
 
@@ -195,7 +191,7 @@
             margin-top: 60px;
             padding-bottom: 80px;
             position: relative;
-            z-index: 5; /* 이미지가 이 영역을 침범하지 못하도록 설정 */
+            z-index: 5; 
         }
 
         .feature-card {
@@ -299,8 +295,9 @@
                 padding: 15px 20px; 
             }
             .header-left { 
+                position: static; /* 모바일에서는 absolute 해제 */
                 width: 100%; 
-                justify-content: space-between; 
+                justify-content: center; /* 모바일에서 로고 가운데 정렬 */
             }
             .search-box { display: none; }
             
@@ -343,8 +340,7 @@
     <header>
         <div class="header-left">
             <a href="#" class="logo">
-                <span class="logo-mark">ISA</span>
-                일신오토클레이브
+                <img src="isalogo_w.png" alt="일신오토클레이브">
             </a>
         </div>
         <nav>
@@ -352,7 +348,7 @@
                 <li><a href="#" class="active">홈</a></li>
                 <li><a href="#">매뉴얼</a></li>
                 <li><a href="#">자가 진단 가이드</a></li>
-                <li><a href="#">다운로드 <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7rem;"></i></a></li>
+                <li><a href="https://suflux.com/sub/archive.php">다운로드 <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7rem;"></i></a></li>
             </ul>
         </nav>
     </header>
@@ -366,8 +362,8 @@
                 
                 <div class="hero-buttons">
                     <a href="#" class="btn btn-primary">매뉴얼</a>
-                    <a href="#" class="btn btn-secondary">다운로드</a>
-                    <a href="#" class="btn btn-secondary">소개 영상 <i class="fa-regular fa-clone"></i></a>
+                    <a href="https://suflux.com/sub/archive.php" class="btn btn-secondary">다운로드</a>
+                    <a href="https://www.youtube.com/watch?v=7IC95krX8rA" class="btn btn-secondary">소개 영상 <i class="fa-regular fa-clone"></i></a>
                 </div>
             </div>
 
